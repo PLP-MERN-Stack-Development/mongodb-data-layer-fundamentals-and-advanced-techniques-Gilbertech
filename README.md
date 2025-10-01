@@ -1,59 +1,72 @@
-# MongoDB Fundamentals - Week 1
+# PLP Bookstore - MongoDB Week 1 Assignment
 
-## Setup Instructions
+This repository contains the Week 1 MongoDB assignment for the PLP Bookstore project.
 
-Before you begin this assignment, please make sure you have the following installed:
+## Repository
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+The assignment repository is available at:  
+[https://github.com/PLP-MERN-Stack-Development/mongodb-data-layer-fundamentals-and-advanced-techniques-Gilbertech](https://github.com/PLP-MERN-Stack-Development/mongodb-data-layer-fundamentals-and-advanced-techniques-Gilbertech)
 
-### Node.js Package Setup
+## Files
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+- `insert_books.js` – Node.js script to populate the `plp_bookstore` database with sample Kenyan-themed books.
+- `queries.js` – MongoDB queries for CRUD operations, advanced filtering, aggregation, and indexing.
+
+
+## Prerequisites
+
+- MongoDB Community Edition or MongoDB Atlas cluster.
+- MongoDB Shell (`mongosh`) or MongoDB Compass.
+- Node.js installed (for running `insert_books.js`).
+
+## Running the Scripts
+
+### 1. Clone the Repository
 
 ```bash
-# Initialize a package.json file
-npm init -y
+git clone https://github.com/PLP-MERN-Stack-Development/mongodb-data-layer-fundamentals-and-advanced-techniques-Gilbertech.git
+cd mongodb-data-layer-fundamentals-and-advanced-techniques-Gilbertech
+2. Insert Sample Books
+Run the Node.js script:
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+bash
+Copy code
+node insert_books.js
+This will:
 
-## Assignment Overview
+Connect to your MongoDB server.
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+Drop the books collection if it already exists.
 
-## Submission
+Insert 10 sample Kenyan-themed books.
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+3. Run MongoDB Queries
+Option 1: Run all queries at once
+bash
+Copy code
+mongosh < queries.js
+Option 2: Run queries interactively
+Open MongoDB Shell:
 
-## Getting Started
+bash
+Copy code
+mongosh
+Select the database:
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+js
+Copy code
+use plp_bookstore
+Copy and paste queries from queries.js to run them individually.
 
-## Files Included
+Notes
+queries.js includes:
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+Finding books by genre, author, or publication year.
 
-## Requirements
+Updating and deleting books.
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+Filtering, projection, sorting, and pagination.
 
-## Resources
+Aggregation pipelines for average price by genre, author with the most books, and books grouped by decade.
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+Index creation for performance optimization.
